@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="QQLoginHandleAction" extends="struts-default"
+		namespace="/api/qq">
+		<action name="index" class="QQLoginHandleAction" method="index">
+			<result name="qqLoginUrl" type="redirect">${openUrl}</result>
+		</action>
+		<action name="checkLogin" class="QQLoginHandleAction" method="checkLogin">
+			<result name="success" type="redirect">${callback}</result>
+			<result name="reg">${openUrl}</result>
+		</action>
+		<action name="reg" class="QQLoginHandleAction" method="reg">
+			<result name="SUCCESS">/api/qq/reg.jsp
+			</result>
+		</action>
+		<action name="login" class="QQLoginHandleAction" method="login">
+		</action>
+	</package>
+</struts>

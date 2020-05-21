@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberStoreManagerAction" extends="struts-default" namespace="/manager/store">
+	
+	<action name="delete" class="MemberStoreManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/store</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberStoreManagerAction" method="info">
+		<result name="success">/manager/store/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberStoreManagerAction" method="list">
+		<result name="success">/manager/store/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

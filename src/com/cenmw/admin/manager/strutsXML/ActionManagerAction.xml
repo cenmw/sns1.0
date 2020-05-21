@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="ActionManagerAction" extends="struts-default" namespace="/manager/sys">
+		<action name="getActionList" class="ActionManagerAction" method="getActionList">
+			<result name="success">/manager/useraction/actionlist.jsp</result>
+		</action>
+		<action name="showAction" class="ActionManagerAction" method="showAction">
+			<result name="success">/manager/useraction/actioninfo.jsp</result>
+		</action>
+		<action name="saveAction" class="ActionManagerAction" method="saveAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAction</param>
+				<param name="namespace">/manager/sys</param>
+				<param name="id">${action.actionid}</param>
+				<param name="acid">${action.actioncolumnid}</param>
+			</result>
+			<result name="input">/manager/useraction/actioninfo.jsp</result>
+		</action>
+		<action name="deleteAction" class="ActionManagerAction" method="deleteAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">getActionList</param>
+				<param name="namespace">/manager/sys</param>
+				<param name="acid">${acid}</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberInfoRegLoginAction" extends="struts-default"
+		namespace="/">
+		
+		<action name="reg" class="MemberInfoRegLoginAction"
+			method="reg">
+			<result name="success">/member/reg_2020.jsp</result>
+		</action>
+		
+		<action name="regsave" class="MemberInfoRegLoginAction"
+			method="regsave">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/membercenter</param>
+		    </result>
+		    <result name="input" type="redirectAction">
+				<param name="actionName">reg</param>
+				<param name="namespace">/</param>
+		    </result>
+			<result name="store" type="redirectAction">
+				<param name="actionName">store</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<action name="store" class="MemberInfoRegLoginAction"
+				method="store">
+			<result name="success">/member/store_2020.jsp</result>
+		</action>
+
+		<action name="creg" class="MemberInfoRegLoginAction"
+			method="creg">
+			<result name="success">/member/creg.jsp</result>
+		</action>
+		
+		<action name="cregsuc" class="MemberInfoRegLoginAction"
+			method="cregsuc">
+			<result name="success">/member/cregsuc.jsp</result>
+		</action>
+		
+		<action name="cregsave" class="MemberInfoRegLoginAction"
+			method="cregsave">
+			<result name="success" type="redirectAction">
+				<param name="actionName">cregsuc</param>
+				<param name="namespace">/</param>
+				<param name="email">${email}</param>
+		    </result>
+		    <result name="input" type="redirectAction">
+				<param name="actionName">creg</param>
+				<param name="namespace">/</param>
+		    </result>
+		</action>
+		
+		<action name="login" class="MemberInfoRegLoginAction"
+			method="login">
+		    <result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/membercenter</param>
+		    </result>
+		    <result name="input" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+            </result>
+		</action>
+		
+		<!-- ajax 验证 -->
+		<action name="checkAccount" class="MemberInfoRegLoginAction"
+			method="checkAccount">
+		</action>
+		<action name="checkEmail" class="MemberInfoRegLoginAction"
+			method="checkEmail">
+		</action>
+		<action name="checkMobile" class="MemberInfoRegLoginAction"
+			method="checkMobile">
+		</action>
+		
+		<!-- 忘记密码操作 -->
+		<action name="initpwd" class="MemberInfoRegLoginAction"
+			method="initpwd">
+		    <result name="success" type="redirectAction">
+				<param name="actionName">initpwdsuc</param>
+				<param name="namespace">/</param>
+				<param name="email">${email}</param>
+		    </result>
+		    <result name="input" type="redirect">/member/findpwd.jsp</result>
+		</action>
+		
+		<!-- 忘记密码操作成功 -->
+		<action name="initpwdsuc" class="MemberInfoRegLoginAction"
+			method="initpwdsuc">
+			<result name="success">/member/findpwdsuc.jsp</result>
+		</action>
+		
+		<!-- 重置密码操作 -->
+		<action name="uppwd" class="MemberInfoRegLoginAction"
+			method="uppwd">
+		    <result name="success">/member/uppwd.jsp</result>
+		    <result name="input">/member/uppwdfals.jsp</result>
+		</action>
+		
+		<!-- 保存重置密码操作 -->
+		<action name="saveuppwd" class="MemberInfoRegLoginAction"
+			method="saveuppwd">
+		    <result name="success" type="redirectAction">
+				<param name="actionName">uppwdsuc</param>
+				<param name="namespace">/</param>
+				<param name="email">${email}</param>
+		    </result>
+		    <result name="input" type="redirectAction">
+				<param name="actionName">uppwd</param>
+				<param name="namespace">/</param>
+				<param name="email">${email}</param>
+				<param name="sign">${sign}</param>
+		    </result>
+		</action>
+		
+		<!-- 重置密码操作成功 -->
+		<action name="uppwdsuc" class="MemberInfoRegLoginAction"
+			method="uppwdsuc">
+			<result name="success">/member/uppwdsuc.jsp</result>
+		</action>
+
+		<action name="storeinfo" class="MemberInfoRegLoginAction" method="storeinfo">
+			<result name="success">/member/storeinfo_2020.jsp
+			</result>
+		</action>
+			
+	</package>
+</struts>

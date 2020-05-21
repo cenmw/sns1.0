@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberConsultAllCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="consultallinfo" class="MemberConsultAllCenterAction" method="info">
+		<result name="success">/member/center/consult/allinfo.jsp
+		</result>
+	</action>
+	<action name="consultalllist" class="MemberConsultAllCenterAction" method="list">
+		<result name="success">/member/center/consult/alllist.jsp
+		</result>
+	</action>
+	
+	</package>
+</struts>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="UserGroupManagerAction" extends="struts-default" namespace="/manager/sys">
+		<action name="showUserGroup" class="UserGroupManagerAction" method="showUserGroup">
+			<result name="success">/manager/useraction/usergroupinfo.jsp</result>
+		</action>
+		
+		<action name="saveUserGroup" class="UserGroupManagerAction" method="saveUserGroup">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showUserGroup</param>
+				<param name="namespace">/manager/sys</param>
+				<param name="id">${userGroup.id}</param>
+				<param name="backurl">${backurl}</param>
+			</result>
+			<result name="input">/manager/useraction/usergroupinfo.jsp</result>
+		</action>
+		
+		<action name="deleteUserGroup" class="UserGroupManagerAction" method="deleteUserGroup">
+			<result name="success">${backurl}
+			</result>
+		</action>
+	</package>
+</struts>

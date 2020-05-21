@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberContentCenterAction" extends="struts-default"
+		namespace="/membercenter">
+
+		<action name="contentsave" class="MemberContentCenterAction"
+			method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">contentinfo</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${memberBlog.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+		<action name="contentdelete" class="MemberContentCenterAction"
+			method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">contentlist</param>
+				<param name="namespace">/membercenter</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+		<action name="contentinfo" class="MemberContentCenterAction"
+			method="info">
+			<result name="success">/member/center/content/info.jsp
+		</result>
+		</action>
+		<action name="showcontentinfo" class="MemberContentCenterAction"
+			method="showinfo">
+			<result name="success">/member/center/content/showinfo.jsp</result>
+			<result name="qx1">/member/center/qx1.jsp</result>
+			<result name="qx2">/member/center/qx2.jsp</result>
+		</action>
+		<action name="contentlist" class="MemberContentCenterAction"
+			method="list">
+			<result name="success">/member/center/content/list.jsp
+		</result>
+		</action>
+		<action name="fcontentlist" class="MemberContentCenterAction"
+			method="flist">
+			<result name="success">/member/center/content/flist.jsp
+		</result>
+		</action>
+		<action name="ccontentlist" class="MemberContentCenterAction"
+			method="clist">
+			<result name="success">/member/center/content/clist.jsp
+		</result>
+		</action>
+
+	</package>
+</struts>

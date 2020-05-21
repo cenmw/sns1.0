@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberMoodCenterAction" extends="struts-default"
+		namespace="/membercenter">
+
+		<action name="moodsave" class="MemberMoodCenterAction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+
+		<action name="mmoodsave" class="MemberMoodCenterAction" method="msave">
+			<result name="success" type="redirectAction">
+				<param name="actionName">moodinfo</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${memberMood.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+
+		<action name="mooddelete" class="MemberMoodCenterAction"
+			method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">moodlist</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+		<action name="moodinfo" class="MemberMoodCenterAction" method="info">
+			<result name="success">/member/center/mood/info.jsp
+		</result>
+		</action>
+		<action name="showmoodinfo" class="MemberMoodCenterAction"
+			method="showinfo">
+			<result name="success">/member/center/mood/showinfo.jsp
+		</result>
+		</action>
+		<action name="moodlist" class="MemberMoodCenterAction" method="list">
+			<result name="success">/member/center/mood/list.jsp
+		</result>
+		</action>
+		<action name="fmoodlist" class="MemberMoodCenterAction" method="flist">
+			<result name="success">/member/center/mood/flist.jsp
+		</result>
+		</action>
+
+		<!-- 2015年添加  交作业-->
+		<action name="myzyinfo" class="MemberMoodCenterAction" method="info">
+			<result name="success">/member/center/2015/myzy/info.jsp</result>
+		</action>
+		
+        <!-- 2015年添加  查看交作业-->
+		<action name="showmyzyfinfo" class="MemberMoodCenterAction"
+			method="showinfo">
+			<result name="success">/member/center/2015/myzy/showinfo.jsp</result>
+		</action>	
+		
+		<!-- 2015年添加  提交交作业-->
+		<action name="myzysave" class="MemberMoodCenterAction" method="msave">
+			<result name="success" type="redirectAction">
+				<param name="actionName">myzyinfo</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${memberMood.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+	</package>
+</struts>

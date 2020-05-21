@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberVedioFrontAction" extends="struts-default" namespace="/front/membervedio">
+	
+	<action name="save" class="MemberVedioFrontAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/front/membervedio</param>
+			<param name="id">${MemberVedio.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberVedioFrontAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/front/membervedio</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberVedioFrontAction" method="info">
+		<result name="success">/front/member/vedio/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberVedioFrontAction" method="list">
+		<result name="success">/front/member/vedio/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

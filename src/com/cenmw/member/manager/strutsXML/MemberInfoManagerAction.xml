@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberInfoManagerAction" extends="struts-default" namespace="/manager/member">
+	
+	<action name="save" class="MemberInfoManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/member</param>
+			<param name="id">${MemberInfo.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+		<result name="input" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/member</param>
+			<param name="id">${id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberInfoManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/member</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberInfoManagerAction" method="info">
+		<result name="success">/manager/member/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberInfoManagerAction" method="list">
+		<result name="success">/manager/member/list.jsp
+		</result>
+	</action>
+	
+	<action name="checkEmail" class="MemberInfoManagerAction" method="checkEmail"></action>	
+	<action name="checkMobile" class="MemberInfoManagerAction" method="checkMobile"></action>	
+	<action name="initpwd" class="MemberInfoManagerAction" method="initpwd"></action>
+	</package>
+</struts>

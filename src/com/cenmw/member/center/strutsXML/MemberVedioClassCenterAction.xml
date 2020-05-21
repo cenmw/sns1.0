@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberVedioClassCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="vedioclasssave" class="MemberVedioClassCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">vedioclassinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${vedioClass.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="vedioclassdelete" class="MemberVedioClassCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">vedioclasslist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="vedioclassinfo" class="MemberVedioClassCenterAction" method="info">
+		<result name="success">/member/center/vedio/classinfo.jsp
+		</result>
+	</action>
+	<action name="vedioclasslist" class="MemberVedioClassCenterAction" method="list">
+		<result name="success">/member/center/vedio/classlist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

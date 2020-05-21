@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberLogCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="logsave" class="MemberLogCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">loginfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${MemberLog.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="logdelete" class="MemberLogCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">loglist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="loginfo" class="MemberLogCenterAction" method="info">
+		<result name="success">/center/member/log/info.jsp
+		</result>
+	</action>
+	<action name="loglist" class="MemberLogCenterAction" method="list">
+		<result name="success">/center/member/log/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

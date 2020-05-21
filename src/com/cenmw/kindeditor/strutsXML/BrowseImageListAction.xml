@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="BrowseImageListAction" extends="struts-default" namespace="/keditor">
+		<action name="browseImageList" class="BrowseImageListAction" method="browseImageList">
+		</action>
+		<action name="browseImageLists" class="BrowseImageListAction" method="browseImageLists">
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="FileUploadAction" extends="struts-default" namespace="/upload">
+		<interceptors>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<action name="fileUpload" class="FileUploadAction" method="fileUpload">
+			<result name="success">/ajaxuploadok.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="getProgressBar" class="FileUploadAction" method="getProgressBar">
+		</action>
+	</package>
+</struts>

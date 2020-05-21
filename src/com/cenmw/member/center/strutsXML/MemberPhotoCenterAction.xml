@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberPhotoCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="photosave" class="MemberPhotoCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">photoinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${MemberPhoto.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="photodelete" class="MemberPhotoCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">photolist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="cid">${cid}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="photoinfo" class="MemberPhotoCenterAction" method="info">
+		<result name="success">/member/center/photo/info.jsp
+		</result>
+	</action>
+	<action name="showphotoinfo" class="MemberPhotoCenterAction" method="showinfo">
+		<result name="success">/member/center/photo/showinfo.jsp</result>
+		<result name="qx1">/member/center/qx1.jsp</result>
+		<result name="qx2">/member/center/qx2.jsp</result>
+	</action>
+	<action name="photolist" class="MemberPhotoCenterAction" method="list">
+		<result name="success">/member/center/photo/list.jsp
+		</result>
+	</action>
+	<action name="fphotolist" class="MemberPhotoCenterAction" method="flist">
+		<result name="success">/member/center/photo/flist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

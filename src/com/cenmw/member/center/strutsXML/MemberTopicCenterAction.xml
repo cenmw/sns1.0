@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberTopicCenterAction" extends="struts-default"
+		namespace="/membercenter">
+
+		<action name="topiclogsave" class="MemberTopicCenterAction"
+			method="topiclogsave">
+			<result name="success" type="redirectAction">
+				<param name="actionName">topiclogsuccess</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${topicLog.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+			<result name="store" type="redirectAction">
+				<param name="actionName">storeinfo</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+		<action name="topicdelete" class="MemberTopicCenterAction"
+			method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">topiclist</param>
+				<param name="namespace">/membercenter</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+		<action name="topicinfo" class="MemberTopicCenterAction"
+			method="info">
+			<result name="success">/member/center/topic/info.jsp
+		</result>
+		</action>
+		<action name="showtopicinfo" class="MemberTopicCenterAction"
+			method="showinfo">
+			<result name="success">/member/center/topic/showinfo.jsp
+		</result>
+			<result name="store" type="redirectAction">
+				<param name="actionName">storeinfo</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+		<action name="topiclist" class="MemberTopicCenterAction"
+			method="list">
+			<result name="success">/member/center/topic/list.jsp
+		</result>
+		</action>
+
+		<action name="topicclasslist" class="MemberTopicCenterAction"
+			method="classlist">
+			<result name="success">/member/center/topic/classlist.jsp
+		</result>
+		</action>
+
+		<action name="topiclogsuccess" class="MemberTopicCenterAction"
+			method="topiclogsuccess">
+			<result name="success">/member/center/topic/logsuccess.jsp
+		</result>
+		</action>
+
+	</package>
+</struts>

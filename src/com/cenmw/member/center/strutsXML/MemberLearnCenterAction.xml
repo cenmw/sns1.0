@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberLearnCenterAction" extends="struts-default"
+		namespace="/membercenter">
+
+		<action name="learnlogsave" class="MemberLearnCenterAction"
+			method="learnlogsave">
+			<result name="success" type="redirectAction">
+				<param name="actionName">learnlogsuccess</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${learnLog.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+			<result name="store" type="redirectAction">
+				<param name="actionName">storeinfo</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+		<action name="learninfo" class="MemberLearnCenterAction"
+			method="info">
+			<result name="success">/member/center/learn/info.jsp
+		</result>
+		</action>
+		<action name="showlearninfo" class="MemberLearnCenterAction"
+			method="showinfo">
+			<result name="success">/member/center/learn/showinfo.jsp
+		</result>
+			<result name="store" type="redirectAction">
+				<param name="actionName">storeinfo</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+		<action name="learnlist" class="MemberLearnCenterAction"
+			method="list">
+			<result name="success">/member/center/learn/list.jsp
+		</result>
+		</action>
+
+		<action name="learnclasslist" class="MemberLearnCenterAction"
+			method="classlist">
+			<result name="success">/member/center/learn/classlist.jsp
+		</result>
+		</action>
+
+		<action name="learnlogsuccess" class="MemberLearnCenterAction"
+			method="learnlogsuccess">
+			<result name="success">/member/center/learn/logsuccess.jsp
+		</result>
+		</action>
+
+	</package>
+</struts>

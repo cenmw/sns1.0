@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberCollectionCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="collectionsave" class="MemberCollectionCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">collectioninfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${MemberCollection.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="collectiondelete" class="MemberCollectionCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">${typename}</param>
+			<param name="namespace">/membercenter</param>
+			<param name="type">${type}</param>
+		</result>
+	</action>
+	<action name="collectioninfo" class="MemberCollectionCenterAction" method="info">
+		<result name="success">/member/center/collection/info.jsp
+		</result>
+	</action>
+	<action name="collectionlist" class="MemberCollectionCenterAction" method="list">
+		<result name="success">/member/center/collection/list.jsp
+		</result>
+	</action>
+	<action name="vediocollectionlist" class="MemberCollectionCenterAction" method="list">
+		<result name="success">/member/center/collection/vediolist.jsp
+		</result>
+	</action>
+	<action name="learncollectionlist" class="MemberCollectionCenterAction" method="list">
+		<result name="success">/member/center/collection/learnlist.jsp
+		</result>
+	</action>
+	
+	<action name="addMemberCollectionAJAX" class="MemberCollectionCenterAction" method="addMemberCollectionAJAX">
+	</action>
+		
+	</package>
+</struts>

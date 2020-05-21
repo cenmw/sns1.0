@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberPraiseCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="save" class="MemberPraiseCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${MemberPraise.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberPraiseCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberPraiseCenterAction" method="info">
+		<result name="success">/center/member/praise/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberPraiseCenterAction" method="list">
+		<result name="success">/center/member/praise/list.jsp
+		</result>
+	</action>
+	
+	<action name="updateMemberPraiseAJAX" class="MemberPraiseCenterAction" method="updateMemberPraiseAJAX"></action>	
+	</package>
+</struts>

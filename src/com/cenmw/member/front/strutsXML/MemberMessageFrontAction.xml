@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberMessageFrontAction" extends="struts-default" namespace="/front/membermessage">
+	
+	<action name="save" class="MemberMessageFrontAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/front/membermessage</param>
+			<param name="id">${MemberMessage.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberMessageFrontAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/front/membermessage</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberMessageFrontAction" method="info">
+		<result name="success">/front/member/message/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberMessageFrontAction" method="list">
+		<result name="success">/front/member/message/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberDiary52ContentManagerAction" extends="struts-default" namespace="/manager/zhoucontent">
+	
+	<action name="save" class="MemberDiary52ContentManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/zhoucontent</param>
+			<param name="id">${MemberDiary52Content.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberDiary52ContentManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/zhoucontent</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberDiary52ContentManagerAction" method="info">
+		<result name="success">/manager/zhou52/content/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberDiary52ContentManagerAction" method="list">
+		<result name="success">/manager/zhou52/content/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

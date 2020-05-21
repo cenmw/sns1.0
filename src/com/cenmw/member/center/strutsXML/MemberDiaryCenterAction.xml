@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberDiaryCenterAction" extends="struts-default"
+		namespace="/membercenter">
+
+		<action name="diarysave" class="MemberDiaryCenterAction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">diaryinfo</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${memberDiary.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+		<action name="diarydelete" class="MemberDiaryCenterAction"
+			method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">diarylist</param>
+				<param name="namespace">/membercenter</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+		<action name="diaryinfo" class="MemberDiaryCenterAction" method="info">
+			<result name="success">/member/center/diary/info.jsp
+		</result>
+		</action>
+		<action name="showdiaryinfo" class="MemberDiaryCenterAction"
+			method="showinfo">
+			<result name="success">/member/center/diary/showinfo.jsp</result>
+			<result name="qx1">/member/center/qx1.jsp</result>
+			<result name="qx2">/member/center/qx2.jsp</result>
+		</action>
+		<action name="diarylist" class="MemberDiaryCenterAction" method="list">
+			<result name="success">/member/center/diary/list.jsp
+		</result>
+		</action>
+		<action name="fdiarylist" class="MemberDiaryCenterAction" method="flist">
+			<result name="success">/member/center/diary/flist.jsp
+		</result>
+		</action>
+
+	</package>
+</struts>

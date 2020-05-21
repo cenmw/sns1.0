@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberConsultClassCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="consultclasssave" class="MemberConsultClassCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">consultclassinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${consultClass.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="consultclassdelete" class="MemberConsultClassCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">consultclasslist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="consultclassinfo" class="MemberConsultClassCenterAction" method="info">
+		<result name="success">/member/center/consult/classinfo.jsp
+		</result>
+	</action>
+	<action name="consultclasslist" class="MemberConsultClassCenterAction" method="list">
+		<result name="success">/member/center/consult/classlist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

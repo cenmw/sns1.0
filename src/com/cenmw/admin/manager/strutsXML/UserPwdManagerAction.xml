@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="UserPwdManagerAction" extends="struts-default" namespace="/manager">
+		<action name="updatepass" class="UserPwdManagerAction" method="updatepass">
+			<result name="success">/manager/inc/main.jsp</result>
+		</action>
+		
+	</package>
+</struts>

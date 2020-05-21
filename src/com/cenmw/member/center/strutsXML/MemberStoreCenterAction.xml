@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberStoreCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="storesave" class="MemberStoreCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">showstoreinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${memberStore.id}</param>
+		</result>
+	</action>
+	<action name="storedelete" class="MemberStoreCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">storelist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="storeinfo" class="MemberStoreCenterAction" method="info">
+		<result name="success">/member/center/store/info.jsp
+		</result>
+	</action>
+	<action name="showstoreinfo" class="MemberStoreCenterAction" method="showinfo">
+		<result name="success">/member/center/store/showinfo.jsp
+		</result>
+	</action>
+	<action name="checkstoreinfo" class="MemberStoreCenterAction" method="checkstoreinfo">
+		<result name="success">/member/center/store/checkstoreinfo.jsp
+		</result>
+	</action>
+	<action name="storelist" class="MemberStoreCenterAction" method="list">
+		<result name="success">/member/center/store/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

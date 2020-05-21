@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberContentClassManagerAction" extends="struts-default" namespace="/manager/membercontentclass">
+	
+	<action name="save" class="MemberContentClassManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/membercontentclass</param>
+			<param name="id">${MemberContentClass.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberContentClassManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/membercontentclass</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberContentClassManagerAction" method="info">
+		<result name="success">/manager/member/contentclass/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberContentClassManagerAction" method="list">
+		<result name="success">/manager/member/contentclass/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

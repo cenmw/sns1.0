@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="IntegralConfigManagerAction" extends="struts-default" namespace="/manager/integral">
+	
+	<action name="configsave" class="IntegralConfigManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">configinfo</param>
+			<param name="namespace">/manager/integral</param>
+		</result>
+	</action>
+	<action name="configinfo" class="IntegralConfigManagerAction" method="info">
+		<result name="success">/manager/integral/configinfo.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

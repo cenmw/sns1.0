@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="ContentInfoFrontAction" extends="struts-default" namespace="/">
+	
+	<action name="info" class="ContentInfoFrontAction" method="info">
+		<result name="success">/content/info.jsp
+		</result>
+	</action>
+	<action name="list" class="ContentInfoFrontAction" method="list">
+		<result name="success">/content/list.jsp
+		</result>
+	</action>
+	
+	<action name="aboutus" class="ContentInfoFrontAction" method="aboutus">
+		<result name="success">/content/info.jsp
+		</result>
+	</action>
+	
+	<action name="contactus" class="ContentInfoFrontAction" method="contactus">
+		<result name="success">/content/info.jsp
+		</result>
+	</action>
+	
+	<action name="recruitment" class="ContentInfoFrontAction" method="recruitment">
+		<result name="success">/content/info.jsp
+		</result>
+	</action>
+	<action name="link" class="ContentInfoFrontAction" method="link">
+		<result name="success">/content/info.jsp
+		</result>
+	</action>
+	<action name="help" class="ContentInfoFrontAction" method="help">
+		<result name="success">/content/info.jsp
+		</result>
+	</action>
+	<action name="privacy" class="ContentInfoFrontAction" method="privacy">
+		<result name="success">/content/info.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

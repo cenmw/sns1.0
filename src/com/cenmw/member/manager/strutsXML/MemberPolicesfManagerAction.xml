@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberPolicesfManagerAction" extends="struts-default" namespace="/manager/memberpolicesf">
+	
+	<action name="save" class="MemberPolicesfManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/memberpolicesf</param>
+			<param name="id">${MemberReport.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberPolicesfManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/memberpolicesf</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberPolicesfManagerAction" method="info">
+		<result name="success">/manager/police/sfinfo.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberPolicesfManagerAction" method="list">
+		<result name="success">/manager/police/sflist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

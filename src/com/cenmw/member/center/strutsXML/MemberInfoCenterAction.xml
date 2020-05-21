@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberInfoCenterAction" extends="struts-default"
+		namespace="/membercenter">
+
+		<!-- 会员中心首页 -->
+		<action name="index" class="MemberInfoCenterAction" method="index">
+			<result name="success">/member/center/index.jsp</result>
+			<result name="company">/member/center/cindex.jsp</result>
+		</action>
+
+		<!-- 基础信息开始 -->
+		<action name="basis" class="MemberInfoCenterAction" method="info">
+			<result name="success">/member/center/basis.jsp</result>
+		</action>
+		<action name="contact" class="MemberInfoCenterAction" method="info">
+			<result name="success">/member/center/contact.jsp</result>
+		</action>
+		<action name="head" class="MemberInfoCenterAction" method="info">
+			<result name="success">/member/center/head.jsp</result>
+		</action>
+
+		<action name="password" class="MemberInfoCenterAction" method="password">
+			<result name="success">/member/center/password.jsp</result>
+		</action>
+		<!-- 基础信息结束 -->
+
+		<!-- 会员中心修改密码 -->
+		<action name="updatepassword" class="MemberInfoCenterAction"
+			method="updatepassword">
+			<result name="success" type="redirectAction">
+				<param name="actionName">password</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+
+		<!-- 会员中心退出 -->
+		<action name="loginout" class="MemberInfoCenterAction" method="loginout">
+			<result name="success" type="redirect">/index.jsp</result>
+		</action>
+
+		<!-- 基础信息提交 -->
+		<action name="saveinfo" class="MemberInfoCenterAction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">${typename}</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+
+		<!-- 转载 -->
+		<action name="zz" class="MemberInfoCenterAction" method="zz">
+			<result name="success">/member/center/zz/${typename}.jsp</result>
+		</action>
+		<action name="zzsave" class="MemberInfoCenterAction" method="zzsave">
+			<result name="success" type="redirectAction">
+				<param name="actionName">zz</param>
+				<param name="namespace">/membercenter</param>
+				<param name="cid">${cid}</param>
+				<param name="type">${type}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+
+		<!-- 会员中心头部 -->
+		<action name="top" class="MemberInfoCenterAction" method="top">
+			<result name="personal">/member/center/inc/top.jsp</result>
+			<result name="company">/member/center/inc/ctop.jsp</result>
+		</action>
+
+		<!-- 会员中心右侧 -->
+		<action name="left" class="MemberInfoCenterAction" method="left">
+			<result name="personalindex">/member/center/inc/left.jsp</result>
+			<result name="personal">/member/center/inc/left_my.jsp</result>
+			<result name="companyindex">/member/center/inc/cleft.jsp</result>
+			<result name="company">/member/center/inc/cleft_my.jsp</result>
+		</action>
+
+		<action name="checkMobileAjax" class="MemberInfoCenterAction"
+			method="checkMobileAjax"></action>
+		<!-- 更多动态 -->
+		<action name="getMoreStateAjax" class="MemberInfoCenterAction"
+			method="getMoreStateAjax"></action>
+
+		<!-- 2015年添加  我的动态 1-->
+		<action name="mydtlist" class="MemberInfoCenterAction" method="mydtlist">
+			<result name="success">/member/center/2015/mydtlist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的疏导2-->
+		<action name="mysdlist" class="MemberInfoCenterAction" method="mysdlist">
+			<result name="success">/member/center/2015/mysd/list.jsp</result>
+		</action>
+		
+		<action name="mysdinfo" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info.jsp</result>
+		</action>
+
+		<action name="mysdinfo1" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info1.jsp</result>
+		</action>
+
+		<action name="mysdinfo2" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info2.jsp</result>
+		</action>
+
+		<action name="mysdinfo3" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info3.jsp</result>
+		</action>
+
+		<action name="mysdinfo4" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info4.jsp</result>
+		</action>
+
+		<action name="mysdinfo5" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info5.jsp</result>
+		</action>
+
+		<action name="mysdinfo6" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info6.jsp</result>
+		</action>
+
+		<action name="mysdinfo7" class="MemberInfoCenterAction" method="mysdinfo">
+			<result name="success">/member/center/2015/mysd/info7.jsp</result>
+			<result name="my">/member/center/2015/mysd/info8.jsp</result>
+		</action>
+
+		<action name="showmysdinfo" class="MemberInfoCenterAction"
+			method="showmysdinfo">
+			<result name="success">/member/center/2015/mysd/showinfo.jsp</result>
+		</action>
+
+		<action name="mysddelete" class="MemberInfoCenterAction"
+			method="mysddelete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">mysdlist</param>
+				<param name="namespace">/membercenter</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  我的浏览记录3-->
+		<action name="lljllist" class="MemberInfoCenterAction" method="lljllist">
+			<result name="success">/member/center/2015/lljllist.jsp</result>
+		</action>
+
+		<action name="lljldelete" class="MemberInfoCenterAction"
+			method="lljldelete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">lljllist</param>
+				<param name="namespace">/membercenter</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  我的订单4-->
+		<action name="orderlist" class="MemberInfoCenterAction" method="orderlist">
+			<result name="success">/member/center/2015/orderlist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的家庭6-->
+		<action name="familylist" class="MemberInfoCenterAction"
+			method="familylist">
+			<result name="success">/member/center/2015/familylist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的"众校之星"7-->
+		<action name="zxzxlist" class="MemberInfoCenterAction" method="zxzxlist">
+			<result name="success">/member/center/2015/zxzxlist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的分享 8-->
+		<action name="myfxlist" class="MemberInfoCenterAction" method="myfxlist">
+			<result name="success">/member/center/2015/myfx/list.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我要分享 9-->
+		<action name="myyfxlist" class="MemberInfoCenterAction" method="myyfxlist">
+			<result name="success">/member/center/2015/myfx/ylist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  所有分享 10-->
+		<action name="allfxlist" class="MemberInfoCenterAction" method="allfxlist">
+			<result name="success">/member/center/2015/myfx/alllist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  发布的活动 11-->
+		<action name="myfblaborlist" class="MemberInfoCenterAction"
+			method="myfblaborlist">
+			<result name="success">/member/center/2015/myfb/laborlist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  编辑活动-->
+		<action name="myfblaborinfo" class="MemberInfoCenterAction"
+			method="myfblaborinfo">
+			<result name="success">/member/center/2015/myfb/laborinfo.jsp</result>
+		</action>
+
+		<!-- 2015年添加  添加活动-->
+		<action name="savemyfblaborinfo" class="MemberInfoCenterAction"
+			method="savemyfblaborinfo">
+			<result name="success" type="redirectAction">
+				<param name="actionName">myfblaborinfo</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${LaborInfo.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  修改活动-->
+		<action name="updatemyfblaborinfo" class="MemberInfoCenterAction"
+			method="updatemyfblaborinfo">
+			<result name="success" type="redirectAction">
+				<param name="actionName">myfblaborlist</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  查看活动-->
+		<action name="showmyfblaborinfo" class="MemberInfoCenterAction"
+			method="showmyfblaborinfo">
+			<result name="success">/member/center/2015/myfb/showlaborinfo.jsp</result>
+		</action>
+
+		<!-- 2015年添加  发布的互动 12-->
+		<action name="myfbconsultlist" class="MemberInfoCenterAction"
+			method="myfbconsultlist">
+			<result name="success">/member/center/2015/myfb/consultlist.jsp</result>
+		</action>
+
+		<!-- 2015年添加  编辑互动-->
+		<action name="myfbconsultinfo" class="MemberInfoCenterAction"
+			method="myfbconsultinfo">
+			<result name="success">/member/center/2015/myfb/consultinfo.jsp</result>
+		</action>
+
+		<!-- 2015年添加  添加互动-->
+		<action name="savemyfbconsultinfo" class="MemberInfoCenterAction"
+			method="savemyfbconsultinfo">
+			<result name="success" type="redirectAction">
+				<param name="actionName">myfbconsultinfo</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${ConsultInfo.id}</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  修改互动-->
+		<action name="updatemyfbconsultinfo" class="MemberInfoCenterAction"
+			method="updatemyfbconsultinfo">
+			<result name="success" type="redirectAction">
+				<param name="actionName">myfbconsultlist</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  查看互动-->
+		<action name="showmyfbconsultinfo" class="MemberInfoCenterAction"
+			method="showmyfbconsultinfo">
+			<result name="success">/member/center/2015/myfb/showconsultinfo.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的52周5 列表-->
+		<action name="zhoulist" class="MemberInfoCenterAction" method="zhoulist">
+			<result name="success">/member/center/2015/52zhou/list.jsp</result>
+		</action>
+		
+		<action name="zhoulist1" class="MemberInfoCenterAction" method="zhoulist1">
+			<result name="success">/member/center/2015/52zhou/list1.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的52周5 内页-->
+		<action name="zhouinfo" class="MemberInfoCenterAction" method="zhouinfo">
+			<result name="success">/member/center/2015/52zhou/info.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的52周5 内页-->
+		<action name="zhouinfo1" class="MemberInfoCenterAction" method="zhouinfo1">
+			<result name="success">/member/center/2015/52zhou/info1.jsp</result>
+			<result name="store" type="redirectAction">
+				<param name="actionName">storeinfo</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  我的52周5 内页-->
+		<action name="zhouinfo2" class="MemberInfoCenterAction" method="zhouinfo2">
+			<result name="success">/member/center/2015/52zhou/info2.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的52周5 内页-->
+		<action name="zhouinfo3" class="MemberInfoCenterAction" method="zhouinfo3">
+			<result name="success">/member/center/2015/52zhou/info3.jsp</result>
+		</action>
+
+		<!-- 2015年添加  我的52周5 内页-->
+		<action name="zhouinfo4" class="MemberInfoCenterAction" method="zhouinfo4">
+			<result name="success">/member/center/2015/52zhou/info4.jsp</result>
+		</action>
+
+		<!-- 2015年添加  添加52周-->
+		<action name="savezhouinfo" class="MemberInfoCenterAction"
+			method="savezhouinfo">
+			<result name="success" type="redirectAction">
+				<param name="actionName">zhouinfo2</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${memberDiary52.id}</param>
+				<param name="type">${type}</param>
+			</result>
+			<result name="store" type="redirectAction">
+				<param name="actionName">storeinfo</param>
+				<param name="namespace">/membercenter</param>
+			</result>
+		</action>
+
+		<!-- 2015年添加  添加52周-->
+		<action name="savezhouinfo2" class="MemberInfoCenterAction"
+			method="savezhouinfo">
+			<result name="success" type="redirectAction">
+				<param name="actionName">zhouinfo3</param>
+				<param name="namespace">/membercenter</param>
+				<param name="id">${memberDiary52.id}</param>
+				<param name="type">${type}</param>
+			</result>
+		</action>
+
+		<action name="showzhouinfo" class="MemberInfoCenterAction"
+			method="showzhouinfo">
+			<result name="success">/member/center/2015/52zhou/showinfo.jsp</result>
+		</action>
+
+		<action name="zhoudelete" class="MemberInfoCenterAction"
+			method="zhoudelete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">zhoulist</param>
+				<param name="namespace">/membercenter</param>
+				<param name="backUrl">${backUrl}</param>
+			</result>
+		</action>
+		
+		<!-- 2015年添加  我的作业-->
+		<action name="myzylist" class="MemberInfoCenterAction" method="myzylist">
+			<result name="success">/member/center/2015/myzy/list.jsp</result>
+		</action>
+		
+		<!-- 2015年添加  我的好友作业-->
+		<action name="myzyflist" class="MemberInfoCenterAction" method="myzyflist">
+			<result name="success">/member/center/2015/myzy/flist.jsp</result>
+		</action>
+		
+		<!-- 更多作业 -->
+		<action name="getMoreState9Ajax" class="MemberInfoCenterAction"
+			method="getMoreState9Ajax"></action>
+
+		<!-- 2017年添加  吾日省身-->
+		<action name="wrsslist" class="MemberInfoCenterAction" method="wrsslist">
+			<result name="success">/member/center/2017/wrss/list.jsp</result>
+		</action>
+
+		<action name="wrssinfo" class="MemberInfoCenterAction" method="wrssinfo">
+			<result name="success">/member/center/2017/wrss/info.jsp</result>
+		</action>
+
+		<action name="wrssinfo1" class="MemberInfoCenterAction" method="wrssinfo">
+			<result name="success">/member/center/2017/wrss/info1.jsp</result>
+		</action>
+
+		<action name="wrssinfo2" class="MemberInfoCenterAction" method="wrssinfo">
+			<result name="success">/member/center/2017/wrss/info2.jsp</result>
+		</action>
+
+		<action name="wrssinfo3" class="MemberInfoCenterAction" method="wrssinfo">
+			<result name="success">/member/center/2017/wrss/info3.jsp</result>
+		</action>
+
+		<action name="wrssinfo4" class="MemberInfoCenterAction" method="wrssinfo">
+			<result name="success">/member/center/2017/wrss/info4.jsp</result>
+		</action>
+
+		<action name="wrssinfo5" class="MemberInfoCenterAction" method="wrssinfo">
+			<result name="success">/member/center/2017/wrss/info5.jsp</result>
+		</action>
+
+		<action name="showwrssinfo" class="MemberInfoCenterAction"
+				method="showwrssinfo">
+			<result name="success">/member/center/2017/wrss/showinfo.jsp</result>
+		</action>
+
+		<!-- 2017年添加  习惯养成-->
+		<action name="xgyclist" class="MemberInfoCenterAction" method="xgyclist">
+			<result name="success">/member/center/2017/xgyc/list.jsp</result>
+		</action>
+
+		<action name="xgycinfo" class="MemberInfoCenterAction" method="xgycinfo">
+			<result name="success">/member/center/2017/xgyc/info.jsp</result>
+		</action>
+
+		<action name="xgycinfo1" class="MemberInfoCenterAction" method="xgycinfo">
+			<result name="success">/member/center/2017/xgyc/info1.jsp</result>
+		</action>
+
+		<action name="xgycinfo2" class="MemberInfoCenterAction" method="xgycinfo">
+			<result name="success">/member/center/2017/xgyc/info2.jsp</result>
+		</action>
+
+		<action name="xgycinfo3" class="MemberInfoCenterAction" method="xgycinfo">
+			<result name="success">/member/center/2017/xgyc/info3.jsp</result>
+		</action>
+
+		<action name="xgycinfo4" class="MemberInfoCenterAction" method="xgycinfo">
+			<result name="success">/member/center/2017/xgyc/info4.jsp</result>
+		</action>
+
+		<action name="xgycinfo5" class="MemberInfoCenterAction" method="xgycinfo">
+			<result name="success">/member/center/2017/xgyc/info5.jsp</result>
+		</action>
+
+		<action name="showxgycinfo" class="MemberInfoCenterAction"
+				method="showxgycinfo">
+			<result name="success">/member/center/2017/xgyc/showinfo.jsp</result>
+		</action>
+
+	</package>
+</struts>

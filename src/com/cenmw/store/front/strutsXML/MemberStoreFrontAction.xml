@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberStoreFrontAction" extends="struts-default"
+		namespace="/store">
+
+		<action name="paymentCheckAlipay" class="MemberStoreFrontAction"
+			method="paymentCheckAlipay">
+			<result name="success" type="redirectAction">
+				<param name="actionName">paymentResultAlipay</param>
+				<param name="namespace">/store</param>
+				<param name="id">${id}</param>
+			</result>
+		</action>
+
+		<action name="paymentResultAlipay" class="MemberStoreFrontAction"
+			method="paymentResultAlipay">
+			<result name="success">/store/payment_result_alipay.jsp</result>
+		</action>
+
+	</package>
+</struts>

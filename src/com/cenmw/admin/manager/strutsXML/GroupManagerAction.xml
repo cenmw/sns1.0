@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="GroupManagerAction" extends="struts-default" namespace="/manager/sys">
+		<action name="showGroupManager" class="GroupManagerAction" method="showGroupManager">
+			<result name="success">/manager/useraction/groupmanagerinfo.jsp</result>
+		</action>
+		<action name="saveGroupManager" class="GroupManagerAction" method="saveGroupManager">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showGroupManager</param>
+				<param name="namespace">/manager/sys</param>
+				<param name="id">${groupManager.groupid}</param>
+			</result>
+		</action>
+		<action name="getGroupManagerList" class="GroupManagerAction" method="getGroupManagerList">
+			<result name="success">/manager/useraction/groupmanagerlist.jsp</result>
+			<result name="input">/manager/useraction/groupmanagerwindow.jsp</result>
+		</action>
+		<action name="deleteGroupManager" class="GroupManagerAction" method="deleteGroupManager">
+			<result name="success" type="redirectAction">
+				<param name="actionName">getGroupManagerList</param>
+				<param name="namespace">/manager/sys</param>
+			</result>
+		</action>
+	</package>
+</struts>

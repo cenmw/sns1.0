@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="TopicInfoManagerAction" extends="struts-default" namespace="/manager/topic">
+	
+	<action name="save" class="TopicInfoManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/topic</param>
+			<param name="id">${TopicInfo.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="TopicInfoManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/topic</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="TopicInfoManagerAction" method="info">
+		<result name="success">/manager/topic/info.jsp
+		</result>
+	</action>
+	<action name="list" class="TopicInfoManagerAction" method="list">
+		<result name="success">/manager/topic/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

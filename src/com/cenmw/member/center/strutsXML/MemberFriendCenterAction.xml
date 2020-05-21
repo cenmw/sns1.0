@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberFriendCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="friendsave" class="MemberFriendCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">addfriend</param>
+			<param name="namespace">/membercenter</param>
+			<param name="fid">${fid}</param>
+			<param name="type">${type}</param>
+			<param name="mfid">${mfid}</param>
+		</result>
+	</action>
+	<action name="frienddelete" class="MemberFriendCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">${typename}</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="addfriend" class="MemberFriendCenterAction" method="addfriend">
+		<result name="success">/member/center/friend/addfriend.jsp
+		</result>
+	</action>
+	<action name="friendlist" class="MemberFriendCenterAction" method="list">
+		<result name="success">/member/center/friend/list.jsp
+		</result>
+	</action>
+	<action name="dfriendlist" class="MemberFriendCenterAction" method="dlist">
+		<result name="success">/member/center/friend/dlist.jsp
+		</result>
+	</action>
+	<action name="afriendlist" class="MemberFriendCenterAction" method="alist">
+		<result name="success">/member/center/friend/alist.jsp
+		</result>
+	</action>
+	<action name="cfrienddelete" class="MemberFriendCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">cfriendlist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="cfriendlist" class="MemberFriendCenterAction" method="clist">
+		<result name="success">/member/center/friend/clist.jsp
+		</result>
+	</action>
+	<action name="cafriendlist" class="MemberFriendCenterAction" method="calist">
+		<result name="success">/member/center/friend/calist.jsp
+		</result>
+	</action>
+	
+	<action name="showfriend" class="MemberFriendCenterAction" method="showfriend">
+		<result name="success">/member/center/friend/showfriend.jsp
+		</result>
+	</action>
+	
+	<action name="updateMemberFriendAJAX" class="MemberFriendCenterAction" method="updateMemberFriendAJAX"></action>
+	<action name="addMemberFriendAJAX" class="MemberFriendCenterAction" method="addMemberFriendAJAX"></action>
+		
+	</package>
+</struts>

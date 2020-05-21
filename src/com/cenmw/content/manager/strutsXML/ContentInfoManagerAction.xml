@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="ContentInfoManagerAction" extends="struts-default" namespace="/manager/content">
+	
+	<action name="save" class="ContentInfoManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/content</param>
+			<param name="id">${ContentInfo.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="ContentInfoManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/content</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="ContentInfoManagerAction" method="info">
+		<result name="success">/manager/content/info.jsp
+		</result>
+	</action>
+	<action name="list" class="ContentInfoManagerAction" method="list">
+		<result name="success">/manager/content/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

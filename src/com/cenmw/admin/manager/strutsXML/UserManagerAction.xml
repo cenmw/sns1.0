@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="UserManagerAction" extends="struts-default" namespace="/manager/sys">
+		<action name="showUser" class="UserManagerAction" method="showUser">
+			<result name="success">/manager/useraction/userinfo.jsp</result>
+		</action>
+		<action name="saveUser" class="UserManagerAction" method="saveUser">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showUser</param>
+				<param name="namespace">/manager/sys</param>
+				<param name="id">${user.id}</param>
+				<param name="backurl">${backurl}</param>
+			</result>
+			<result name="input">/manager/useraction/userinfo.jsp
+			</result>
+		</action>
+		<action name="deleteUser" class="UserManagerAction" method="deleteUser">
+			<result name="success">${backurl}
+			</result>
+		</action>
+		<action name="getUserForPage" class="UserManagerAction" method="getUserForPage">
+			<result name="success">/manager/useraction/userlist.jsp</result>
+		</action>
+		<action name="getUserForSearch" class="UserManagerAction" method="getUserForSearch">
+			<result name="success">/manager/useraction/searchuserlist.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="StoreConfigManagerAction" extends="struts-default" namespace="/manager/store">
+	
+	<action name="configsave" class="StoreConfigManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">configinfo</param>
+			<param name="namespace">/manager/store</param>
+		</result>
+	</action>
+	<action name="configinfo" class="StoreConfigManagerAction" method="info">
+		<result name="success">/manager/store/configinfo.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

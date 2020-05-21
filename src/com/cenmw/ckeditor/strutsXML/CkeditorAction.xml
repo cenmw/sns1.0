@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="CkeditorAction" extends="struts-default" namespace="/ckeditor">
+		<action name="uploadImage" class="CkeditorAction" method="uploadImage">
+			<!-- 允许上传文件的类型  -->
+		
+			<interceptor-ref name ="fileUpload"> 
+			    <param name ="allowedTypes"> 
+			    image/x-ms-bmp,image/gif,image/jpeg,image/pjpeg,image/png,image/x-png,image/bmp
+			    </param> 
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"/>
+			<result name="input">/common/ckeditor/imageerror.jsp</result> 
+		</action>
+		<action name="uploadFlash" class="CkeditorAction" method="uploadFlash">
+			<!-- 允许上传文件的类型  -->
+		
+			<interceptor-ref name ="fileUpload"> 
+			    <param name ="allowedTypes"> 
+			    application/x-shockwave-flash
+			    </param> 
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"/>
+			<result name="input">/common/ckeditor/flasherror.jsp</result> 
+		</action>
+		<action name="upload" class="CkeditorAction" method="upload">
+		</action>
+		<action name="showImages" class="CkeditorAction" method="showImages">
+			<result>/common/ckeditor/browseimages.jsp</result>
+		</action>
+		<action name="showFlashs" class="CkeditorAction" method="showFlashs">
+			<result>/common/ckeditor/browseflashs.jsp</result>
+		</action>
+		
+		<action name="deleteImage" class="CkeditorAction" method="deleteImage">
+			<result type="redirectAction" name="success">
+				<param name="actionName">showImages</param>
+				<param name="namespace">/ckeditor</param>
+				<param name="id">${id}</param>
+				<param name="foldername">${foldername}</param>
+				<param name="CKEditorFuncNum">${CKEditorFuncNum}</param>
+			</result>
+		</action>
+		<action name="deleteFlash" class="CkeditorAction" method="deleteFlash">
+			<result type="redirectAction" name="success">
+				<param name="actionName">showFlashs</param>
+				<param name="namespace">/ckeditor</param>
+				<param name="id">${id}</param>
+				<param name="foldername">${foldername}</param>
+				<param name="CKEditorFuncNum">${CKEditorFuncNum}</param>
+			</result>
+		</action>
+	</package>
+</struts>

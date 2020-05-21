@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberStatusCenterAction" extends="struts-default" namespace="/membercenter">
+
+	<action name="statusdelete" class="MemberStatusCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">statuslist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="statusinfo" class="MemberStatusCenterAction" method="info">
+		<result name="success">/member/center/status/info.jsp
+		</result>
+	</action>
+	<action name="statuslist" class="MemberStatusCenterAction" method="list">
+		<result name="success">/member/center/status/list.jsp
+		</result>
+	</action>
+	<action name="fstatuslist" class="MemberStatusCenterAction" method="flist">
+		<result name="success">/member/center/status/flist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

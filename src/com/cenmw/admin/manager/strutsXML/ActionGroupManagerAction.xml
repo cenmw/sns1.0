@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="ActionGroupManagerAction" extends="struts-default"
+		namespace="/manager/sys">
+		<action name="selectactionpage" class="ActionGroupManagerAction"
+			method="selectactionpage">
+			<result>/manager/useraction/selectactionpage.jsp</result>
+		</action>
+		<action name="saveactionlist" class="ActionGroupManagerAction"
+			method="saveactionlist">
+		</action>
+		<action name="saveaction" class="ActionGroupManagerAction"
+			method="saveaction">
+		</action>
+		<action name="actionbygroup" class="ActionGroupManagerAction"
+			method="actionbygroup">
+			<result>/manager/useraction/actionbygroup.jsp</result>
+		</action>
+		<action name="getActionGroupForPage" class="ActionGroupManagerAction"
+			method="getActionGroupForPage">
+			<result>/manager/useraction/actiongrouplist.jsp</result>
+		</action>
+		<action name="showActionGroup" class="ActionGroupManagerAction"
+			method="showActionGroup">
+			<result>/manager/useraction/actiongroupinfo.jsp</result>
+		</action>
+		<action name="saveActionGroup" class="ActionGroupManagerAction"
+			method="saveActionGroup">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showActionGroup</param>
+				<param name="namespace">/manager/sys</param>
+				<param name="id">${actionGroup.id}</param>
+				<param name="backurl">${backurl}</param>
+			</result>
+		</action>
+		<action name="deleteActionGroup" class="ActionGroupManagerAction"
+			method="deleteActionGroup">
+			<result name="success">${backurl}
+			</result>
+		</action>
+	</package>
+</struts>

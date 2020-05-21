@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="CommentInfoFrontAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="commentsave" class="CommentInfoFrontAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/comment</param>
+			<param name="id">${CommentInfo.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="commentdelete" class="CommentInfoFrontAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/comment</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="commentinfo" class="CommentInfoFrontAction" method="info">
+		<result name="success">/comment/info.jsp
+		</result>
+	</action>
+	<action name="commentlist" class="CommentInfoFrontAction" method="list">
+		<result name="success">/comment/list.jsp
+		</result>
+	</action>
+	
+	<action name="inccomment" class="CommentInfoFrontAction" method="inccomment">
+		<result name="success">/member/center/inc/comment.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

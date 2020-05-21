@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="VedioClassManagerAction" extends="struts-default" namespace="/manager/vedioclass">
+	
+	<action name="save" class="VedioClassManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/vedioclass</param>
+			<param name="id">${VedioClass.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="VedioClassManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/vedioclass</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="VedioClassManagerAction" method="info">
+		<result name="success">/manager/vedio/class/info.jsp
+		</result>
+	</action>
+	<action name="list" class="VedioClassManagerAction" method="list">
+		<result name="success">/manager/vedio/class/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

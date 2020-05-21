@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberPhotoGroupCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="photogroupsave" class="MemberPhotoGroupCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">photogroupinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${memberPhotoGroup.id}</param>
+			<param name="backUrl">${backUrl}</param>
+			<param name="msg">${msg}</param>
+		</result>
+	</action>
+	<action name="photogroupdelete" class="MemberPhotoGroupCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">photogrouplist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="photogroupinfo" class="MemberPhotoGroupCenterAction" method="info">
+		<result name="success">/member/center/photo/groupinfo.jsp
+		</result>
+	</action>
+	<action name="photogrouplist" class="MemberPhotoGroupCenterAction" method="list">
+		<result name="success">/member/center/photo/grouplist.jsp
+		</result>
+	</action>
+	<action name="fphotogrouplist" class="MemberPhotoGroupCenterAction" method="flist">
+		<result name="success">/member/center/photo/fgrouplist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

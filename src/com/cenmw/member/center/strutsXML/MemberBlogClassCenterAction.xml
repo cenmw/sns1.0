@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberBlogClassCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="blogclasssave" class="MemberBlogClassCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">blogclassinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${memberBlogClass.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="blogclassdelete" class="MemberBlogClassCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">blogclasslist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="blogclassinfo" class="MemberBlogClassCenterAction" method="info">
+		<result name="success">/member/center/blog/classinfo.jsp
+		</result>
+	</action>
+	<action name="blogclasslist" class="MemberBlogClassCenterAction" method="list">
+		<result name="success">/member/center/blog/classlist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

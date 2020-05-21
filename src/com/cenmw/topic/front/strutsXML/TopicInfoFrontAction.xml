@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="TopicInfoFrontAction" extends="struts-default" namespace="/topic">
+	
+	<action name="save" class="TopicInfoFrontAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/topic</param>
+			<param name="id">${TopicInfo.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="TopicInfoFrontAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/topic</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="TopicInfoFrontAction" method="info">
+		<result name="success">/topic/info.jsp
+		</result>
+	</action>
+	<action name="list" class="TopicInfoFrontAction" method="list">
+		<result name="success">/topic/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

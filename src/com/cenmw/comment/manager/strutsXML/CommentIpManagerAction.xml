@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="CommentIpManagerAction" extends="struts-default" namespace="/manager/commentip">
+	
+	<action name="save" class="CommentIpManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/commentip</param>
+			<param name="id">${CommentIp.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="CommentIpManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/commentip</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="CommentIpManagerAction" method="info">
+		<result name="success">/manager/comment/ip/info.jsp
+		</result>
+	</action>
+	<action name="list" class="CommentIpManagerAction" method="list">
+		<result name="success">/manager/comment/ip/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberReportManagerAction" extends="struts-default" namespace="/manager/memberreport">
+	
+	<action name="save" class="MemberReportManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/memberreport</param>
+			<param name="id">${MemberReport.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberReportManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/memberreport</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberReportManagerAction" method="info">
+		<result name="success">/manager/police/report/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberReportManagerAction" method="list">
+		<result name="success">/manager/police/report/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

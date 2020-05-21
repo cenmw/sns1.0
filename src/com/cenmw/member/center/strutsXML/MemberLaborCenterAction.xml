@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberLaborCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="laborsave" class="MemberLaborCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">laborinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${laborInfo.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="labordelete" class="MemberLaborCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">laborlist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="laborinfo" class="MemberLaborCenterAction" method="info">
+		<result name="success">/member/center/labor/info.jsp
+		</result>
+	</action>
+	<action name="showlaborinfo" class="MemberLaborCenterAction" method="showinfo">
+		<result name="success">/member/center/labor/showinfo.jsp
+		</result>
+	</action>
+	<action name="laborlist" class="MemberLaborCenterAction" method="list">
+		<result name="success">/member/center/labor/list.jsp
+		</result>
+	</action>
+	
+	<action name="addToSignupAJAX" class="MemberLaborCenterAction" method="addToSignupAJAX"></action>
+		
+	</package>
+</struts>

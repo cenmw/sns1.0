@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="CommentFaceGroupManagerAction" extends="struts-web" namespace="/manager/comment">
+		<action name="faceGroupList" class="CommentFaceGroupManagerAction" method="faceGroupList">
+			<result>/manager/comment/faceGroupList.jsp</result>
+		</action>
+		<action name="saveCommentFaceGroup" class="CommentFaceGroupManagerAction" method="saveCommentFaceGroup">
+			<result type="redirect">/manager/comment/faceGroupList</result>
+		</action>
+		<action name="deleteCommentFaceGroup" class="CommentFaceGroupManagerAction" method="deleteCommentFaceGroup">
+			<result type="redirect">/manager/comment/faceGroupList</result>
+		</action>
+		<action name="commentFaceGroupPage" class="CommentFaceGroupManagerAction" method="commentFaceGroupPage">
+			<result>/manager/comment/commentFaceGroupPage.jsp</result>
+		</action>
+	</package>
+</struts>

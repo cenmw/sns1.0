@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="LearnWhyManagerAction" extends="struts-default" namespace="/manager/learnwhy">
+	
+	<action name="save" class="LearnWhyManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/learnwhy</param>
+			<param name="id">${learnWhy.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="LearnWhyManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/learnwhy</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="LearnWhyManagerAction" method="info">
+		<result name="success">/manager/learn/why/info.jsp
+		</result>
+	</action>
+	<action name="list" class="LearnWhyManagerAction" method="list">
+		<result name="success">/manager/learn/why/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

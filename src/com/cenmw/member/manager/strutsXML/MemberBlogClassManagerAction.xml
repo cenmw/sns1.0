@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberBlogClassManagerAction" extends="struts-default" namespace="/manager/memberblogclass">
+	
+	<action name="save" class="MemberBlogClassManagerAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">info</param>
+			<param name="namespace">/manager/memberblogclass</param>
+			<param name="id">${MemberBlogClass.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="delete" class="MemberBlogClassManagerAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">list</param>
+			<param name="namespace">/manager/memberblogclass</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="info" class="MemberBlogClassManagerAction" method="info">
+		<result name="success">/manager/member/blogclass/info.jsp
+		</result>
+	</action>
+	<action name="list" class="MemberBlogClassManagerAction" method="list">
+		<result name="success">/manager/member/blogclass/list.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberPoliceCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="policesave" class="MemberPoliceCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">policeinfo</param>
+			<param name="namespace">/membercenter</param>
+			<param name="id">${MemberReport.id}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="policedelete" class="MemberPoliceCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">policelist</param>
+			<param name="namespace">/membercenter</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="policeinfo" class="MemberPoliceCenterAction" method="info">
+		<result name="success">/member/center/police/info.jsp
+		</result>
+	</action>
+	<action name="policelist" class="MemberPoliceCenterAction" method="list">
+		<result name="success">/member/center/police/list.jsp
+		</result>
+	</action>
+	
+	<action name="fpolicelist" class="MemberPoliceCenterAction" method="flist">
+		<result name="success">/member/center/police/flist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

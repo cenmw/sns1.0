@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberInfoFrontAction" extends="struts-default"
+		namespace="/front/member">
+		
+		<action name="showMemberInfo" class="MemberInfoFrontAction"
+			method="showMemberInfo">
+			<result name="success">/member/regok.jsp</result>
+			<result name="input">/member/memberlogin.jsp</result>
+		</action>
+		<action name="perfectMemberInfo" class="MemberInfoFrontAction"
+			method="perfectMemberInfo">
+			<result name="input">/member/memberlogin.jsp</result>
+			<result name="success" type="redirect">/member/regsuc.jsp</result>
+		</action>
+		<action name="checkAccount" class="MemberInfoFrontAction"
+			method="checkAccount">
+		</action>
+		<action name="checkEmail" class="MemberInfoFrontAction"
+			method="checkEmail">
+		</action>
+		<action name="checkNickName" class="MemberInfoFrontAction"
+			method="checkNickName">
+		</action>
+		<action name="loginAJAX" class="MemberInfoFrontAction"
+			method="loginAJAX">
+		</action>
+		<action name="checkHaveMember" class="MemberInfoFrontAction"
+			method="checkHaveMember">
+		</action>
+		<action name="loginOut" class="MemberInfoFrontAction"
+			method="loginOut">
+			<result name="sso" type="redirect">${bbsBaseUrl}sso/logout.asp?bak=${callback}</result>
+			<result name="success" type="redirect">/member/memberlogin.jsp</result>
+		</action>
+		<action name="login" class="MemberInfoFrontAction"
+			method="login">
+			<!-- 
+			<result name="input">/member/memberlogin.jsp</result> -->
+			<!-- result name="success" type="redirectAction">
+				<param name="actionName">showMemberCenter</param>
+				<param name="namespace">/member</param>
+			</result -->
+			<!-- 
+			<result name="success" type="redirect">/member/memberloginsuccess.jsp</result> -->
+		</action>
+		
+		<action name="newRegMembers" class="MemberInfoFrontAction"
+			method="getNewRegMemberListToJSON">
+		</action>
+		
+		
+	</package>
+</struts>

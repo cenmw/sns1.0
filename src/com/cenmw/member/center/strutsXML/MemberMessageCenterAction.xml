@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="MemberMessageCenterAction" extends="struts-default" namespace="/membercenter">
+	
+	<action name="messagesave" class="MemberMessageCenterAction" method="save">
+		<result name="success" type="redirectAction">
+			<param name="actionName">${typename}</param>
+			<param name="namespace">/membercenter</param>
+			<param name="rid">${rid}</param>
+			<param name="backUrl">${backUrl}</param>
+		</result>
+	</action>
+	<action name="messagedelete" class="MemberMessageCenterAction" method="delete">
+		<result name="success" type="redirectAction">
+			<param name="actionName">${typename}</param>
+			<param name="namespace">/membercenter</param>
+			<param name="type">${type}</param>
+		</result>
+	</action>
+	<action name="messageinfo" class="MemberMessageCenterAction" method="info">
+		<result name="success">/member/center/message/info.jsp
+		</result>
+	</action>
+	<action name="messagelist" class="MemberMessageCenterAction" method="list">
+		<result name="success">/member/center/message/list.jsp
+		</result>
+	</action>
+	<action name="rmessagelist" class="MemberMessageCenterAction" method="rlist">
+		<result name="success">/member/center/message/rlist.jsp
+		</result>
+	</action>
+	<action name="smessagelist" class="MemberMessageCenterAction" method="slist">
+		<result name="success">/member/center/message/slist.jsp
+		</result>
+	</action>
+	
+	<action name="sendmessageinfo" class="MemberMessageCenterAction" method="sendinfo">
+		<result name="success">/member/center/message/sendinfo.jsp
+		</result>
+	</action>
+	
+	<action name="fmemberlist" class="MemberMessageCenterAction" method="fmemberlist">
+		<result name="success">/member/center/message/fmemberlist.jsp
+		</result>
+	</action>
+		
+	</package>
+</struts>

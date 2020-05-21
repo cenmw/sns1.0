@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="UserAction" extends="struts-default" namespace="/admin">
+		<action name="login" class="UserAction" method="login">
+			<result name="success" type="redirect">/manager/index.jsp
+			</result>
+			<result name="input" type="redirect">/admin/index.jsp</result>
+		</action>
+		<action name="loginOut" class="UserAction" method="loginOut">
+			<result name="success" type="redirect">/admin/index.jsp
+			</result>
+		</action>
+	</package>
+</struts>

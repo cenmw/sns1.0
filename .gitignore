@@ -60,4 +60,8 @@ buildNumber.properties
 # src.main.resources
 bootstrap-dev.yml
 # log4j
-request-log/
+Data/
+lib/
+out/
+build/
+uploadfiles/

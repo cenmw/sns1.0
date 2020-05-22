@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN"
+        "http://tuckey.org/res/dtds/urlrewrite2.6.dtd">
+        
+<!--
+    Configuration file for UrlRewriteFilter
+    http://tuckey.org/urlrewrite/
+    
+-->
+<urlrewrite>
+
+ 
+<!-- 显示主题帖    
+	<rule>          
+		<from>^/manager/product/([0-9]+).html$</from>              
+		<to type="forward">/manager/product/showProductType.action?id=$1</to>    
+	</rule>        
+	<rule>          
+		<from>^/forum/thread/([0-9]+).html?page=([0-9]+)$</from>              
+		<to type="forward">/product/manager/showProductType.action?id=$1&amp;page=$2</to>    
+	</rule> 
+	
+	<rule>          
+		<from>^/shop/list/([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+).html</from>              
+		<to type="forward">/shops/shopcontent?pcid=$1&amp;cid=$2&amp;regionid=$3&amp;ordertype=$4&amp;currentPage=$5&amp;pageSize=$6&amp;</to>    
+	</rule>
+-->	
+ <!-- 抽奖 -->
+ 	<rule>
+ 		<from>^/lottery/([A-Za-z]+)/([0-9]+)$</from>
+ 		<to type="forward">/lottery/lottery?tempPath=$1&amp;id=$2</to>
+ 	</rule>
+ <!-- /抽奖 -->
+ <!-- 菜谱 -->
+ 	<rule>
+ 		<from>^/cookbook/([0-9]+)$</from>
+ 		<to type="forward">/cookbook/getCookBook?id=$1</to>
+ 	</rule>
+ <!-- /菜谱 -->
+ 
+ <!-- 资讯 -->
+    <rule>          
+		<from>^/content/([0-9]+).html$</from>              
+		<to type="forward">/content/findContentInfo?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/content/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/content/findContentInfo?id=$1&amp;contentcurPage=$2</to>    
+	</rule>
+	
+	<rule>          
+		<from>^/(\w+)/content-(\d+)\.html$</from>              
+		<to type="forward">/content/findContentInfo?id=$2</to>    
+	</rule>
+	<rule>          
+		<from>^/(\w+)/content-(\d+)-(\d+)\.html$</from>              
+		<to type="forward">/content/findContentInfo?id=$2&amp;contentcurPage=$3</to>    
+	</rule>
+	
+	<rule>          
+		<from>^/list/([0-9]+).html$</from>              
+		<to type="forward">/content/findContentList?channelid=$1</to>    
+	</rule>
+	 
+	<rule>          
+		<from>^/(\w+)/list-(\d+)\.html$</from>              
+		<to type="forward">/content/findContentList?channelid=$2</to>    
+	</rule>
+ <!-- 商铺  -->
+	<rule>          
+		<from>^/shop/info/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopInfo?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/findShopInfo-([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopInfo?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/experience/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopExperience?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/note/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopNote?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/content/([0-9]+).html$</from>              
+		<to type="forward">/shops/shopcontent?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/productlist/([0-9]+).html$</from>              
+		<to type="forward">/shop/product/getproductlist?shopid=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/photogrouplist/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopPhotoGroupList?shopid=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/photogroupinfo/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopPhotoGroupInfo?shopid=$1&amp;id=$2</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/photogroupinfoinfo/([0-9]+)-([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopPhotoGroupInfoInfo?shopid=$1&amp;gid=$2&amp;id=$3</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/noticelist/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopNoticeList?shopid=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/noticeinfo/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopNoticeInfo?shopid=$1&amp;id=$2</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/teamlist/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopTeamList?shopid=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/teaminfo/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopTeamInfo?shopid=$1&amp;id=$2</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/vediolist/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopVedioList?shopid=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/vedioinfo/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopVedioInfo?shopid=$1&amp;id=$2</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/discountlist/([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopDiscountList?shopid=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/shop/discountinfo/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/shop/findShopDiscountInfo?shopid=$1&amp;id=$2</to>    
+	</rule>
+ <!-- 商城  -->
+	<rule>          
+		<from>^/bmall/([0-9]+).html$</from>              
+		<to type="forward">/bmall/info?id=$1</to>    
+	</rule>
+	
+<!-- 商业街  -->
+	<rule>          
+		<from>^/bstreet/([0-9]+).html$</from>              
+		<to type="forward">/bstreet/info?id=$1</to>    
+	</rule>
+<!-- 品牌  -->
+	<rule>          
+		<from>^/brandzq/home/([0-9]+).html$</from>              
+		<to type="forward">/brandzq/home?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/brandzq/content/([0-9]+).html$</from>              
+		<to type="forward">/brandzq/content?id=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/brandzq/info/([0-9]+).html$</from>              
+		<to type="forward">/brandzq/info?id=$1</to>    
+	</rule>
+<!-- 爱逛街  -->
+	<rule>          
+		<from>^/ashopping/list/([0-9]+).html$</from>              
+		<to type="forward">/ashopping/findList?type=$1</to>    
+	</rule>
+	<rule>          
+		<from>^/ashopping/list/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/ashopping/findList?type=$1&amp;cid=$2</to>    
+	</rule>
+	<rule>          
+		<from>^/ashopping/content/([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/ashopping/findInfo?type=$1&amp;id=$2</to>    
+	</rule>
+	<rule>          
+		<from>^/ashopping/content/([0-9]+)-([0-9]+)-([0-9]+).html$</from>              
+		<to type="forward">/ashopping/findInfo?type=$1&amp;id=$2&amp;contentcurPage=$3</to>    
+	</rule>
+<!-- 达人 -->
+ 	<rule>
+ 		<from>^/daren/([0-9]+).html$</from>
+ 		<to type="forward">/daren/info?id=$1</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/daren/introduce/([0-9]+).html$</from>
+ 		<to type="forward">/daren/introduce?id=$1</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/darens/([0-9]+)-([0-9]+).html$</from>
+ 		<to type="forward">/daren/list?pcid=$1&amp;cid=$2</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/daren/([0-9]+)-([0-9]+).html$</from>
+ 		<to type="forward">/daren/baselist?darenid=$1&amp;cid=$2</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/daren/baseinfo/([0-9]+).html$</from>
+ 		<to type="forward">/daren/baseinfo?id=$1</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/daren/baseinfo/([0-9]+)-([0-9]+).html$</from>
+ 		<to type="forward">/daren/baseinfo?id=$1&amp;contentcurPage=$2</to>
+ 	</rule>
+ 	
+ 	<rule>
+ 		<from>^/daren/fanslist/([0-9]+).html$</from>
+ 		<to type="forward">/daren/fanslist?id=$1</to>
+ 	</rule>
+ 	
+ 	<rule>
+ 		<from>^/daren/grouplist/([0-9]+).html$</from>
+ 		<to type="forward">/daren/grouplist?id=$1</to>
+ 	</rule>
+ 	
+ 	<rule>
+ 		<from>^/daren/hotlist/([0-9]+).html$</from>
+ 		<to type="forward">/daren/hotlist?darenid=$1</to>
+ 	</rule>
+ 	
+ 	<rule>
+ 		<from>^/daren/drdtlist/([0-9]+).html$</from>
+ 		<to type="forward">/daren/drdtlist?darenid=$1</to>
+ 	</rule>
+ 	
+ 	<rule>
+ 		<from>^/daren/cppclist/([0-9]+).html$</from>
+ 		<to type="forward">/daren/cppclist?darenid=$1</to>
+ 	</rule>
+ 	
+ 	<rule>
+ 		<from>^/daren/sendquestions/([0-9]+).html$</from>
+ 		<to type="forward">/daren/sendquestions?id=$1</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/daren/questionshaslist/([0-9]+).html$</from>
+ 		<to type="forward">/daren/questionshaslist?id=$1</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/daren/questionsnotlist/([0-9]+).html$</from>
+ 		<to type="forward">/daren/questionsnotlist?id=$1</to>
+ 	</rule>
+ 	<rule>
+ 		<from>^/daren/questionsinfo/([0-9]+)-([0-9]+).html$</from>
+ 		<to type="forward">/daren/questionsinfo?id=$1&amp;darenid=$2</to>
+ 	</rule>
+</urlrewrite>

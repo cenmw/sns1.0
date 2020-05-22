@@ -1,0 +1,37 @@
+(1) Example
+Html <link href="jquery.popup.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.js"/>
+<script type="text/javascript" src="jquery.popup.js"/>
+(2) Normal Alert Demo
+Html <a href="javascript:pop({text:'This is a normal alert demo.',title:'Normal'},3,function(){alert('normal callback');});">Demo</a>
+(3) Success Alert Demo
+Html <a href="javascript:pop({text:'This is a success alert demo.',title:'Success'},1,function(){alert('success callback');});">Demo</a>
+(4) Error Alert Demo
+Html <a href="javascript:pop({text:'This is a error alert demo.',title:'Error'},0,function(){alert('error callback');});">Demo</a>
+(5) Confirm Demo
+Html <a href="javascript:pop({text:'Are you ok?',title:'Confirm'},function(){alert('fine');},function(){alert('bad');});">Demo</a>
+(6) Window Demo
+Html <a href="javascript:$.fn.popup({iframe:true,url:'http://www.google.com/',title:'Google',width:600,height:450});">Demo</a>
+(7) User Defined Demo
+JavaScript
+
+function demo(){
+    $(document.body).popup($.extend({
+        buttons: {
+            Cancel: function(){
+                $(document.body).popup({action:9},function(){});
+            },
+            Submit: function(){
+                $(document.body).popup({action:9},function(){$('#popup_iframe')[0].contentWindow.test();});                    
+            }
+        },
+        iframe: true,
+        scrolling:'auto',
+        type: 9,
+        url:'demo/popup_demo.html',
+        title:'Demo',
+        width: 860,
+        height: 320
+    }));
+}
+

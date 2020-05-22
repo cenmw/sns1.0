@@ -1,0 +1,44 @@
+/* CSS Document */
+
+
+.artZoomBox {
+	width:715px; text-align:center; margin:0 auto;padding-top:5px;border:1px solid #DEDEDE;background: none repeat scroll 0 0 #F5F5F5;
+}
+a.artZoom {CURSOR: url(cur_zin.cur) , pointer; COLOR: #ccc; PADDING-TOP: 3px;  POSITION: relative; }
+a.artZoom:hover {
+	
+}
+a.artZoom SPAN.loading {
+	DISPLAY: block; PADDING-LEFT: 20px; FONT-SIZE: 9px; BACKGROUND: url(loading.gif) #fff no-repeat 0px 0px; FILTER: alpha(opacity=70); MARGIN: 2px 0px; WIDTH: 130px; LINE-HEIGHT: 16px; HEIGHT: 16px; opacity: 0.7;
+}
+
+.artZoomBox .tool {width:725px; height:24px;padding-left:10px;}
+.js_hover.artZoomBox .tool {
+	
+}
+.artZoomBox .tool a {
+	DISPLAY: block; FILTER: alpha(opacity=50); FLOAT: left; OVERFLOW: hidden; WIDTH: 60px; COLOR: #fff;  HEIGHT: 24px; BACKGROUND-COLOR: #3a6ea5; TEXT-DECORATION: none; opacity: 0.5;margin-right:5px; line-height:24px;
+}
+.artZoomBox .tool a:hover {
+	FILTER: alpha(opacity=80); opacity: 0.8
+}
+.artZoomBox .tool a.hideImg {
+	
+}
+.artZoomBox .tool a.imgLeft {
+	BACKGROUND-POSITION: 0px 0px
+}
+.artZoomBox .tool a.imgLeft {
+	BACKGROUND-POSITION: -24px 0px
+}
+.artZoomBox .tool a.viewImg {
+	BACKGROUND-POSITION: 0px -24px
+}
+.artZoomBox .maxImgLink{DISPLAY: inline; CURSOR: url(cur_zout.cur) , pointer;  display:block;  width:705px; padding: 10px 5px;
+ overflow: visible;
+}
+
+.artZoomBox .maxImgLink .maxImg {}
+
+.small{ }
+a.miniImg{ padding-bottom:0;}

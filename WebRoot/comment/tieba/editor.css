@@ -1,0 +1,19 @@
+#comentFace_Box{display:none;position:absolute;top:0px;width:400px;z-index:200;}
+#comentFace_Box .comentFace_bg{border:1px solid #D7D7D7;background-color: #FFFFFF}
+#comentFace_Box .comentFace_listbox{padding:10px;10px;10px;2px;}
+#comentFace_Box ul.commentFace_panel_default{list-style: none;margin:0px 6px;padding:0px;width:366px;height:135px;}
+#comentFace_Box ul.commentFace_panel_default li{float:left;margin:0px;padding:0px;height:27px;}
+#comentFace_Box ul.commentFace_panel_default li img{border:1px solid #FFFFFF;margin:0px;padding:0px;width:24px;height:24px;}
+#comentFace_Box ul.commentFace_panel_default li a:hover img{border:1px solid #3399FF;}
+
+
+.comentFace_Box{display:none;position:absolute;top:0px;width:400px;z-index:200;}
+.comentFace_Box .comentFace_bg{border:1px solid #D7D7D7;background-color: #FFFFFF}
+.comentFace_Box .comentFace_listbox{padding:10px;10px;10px;2px;overflow: hidden;}
+.comentFace_Box ul.commentFace_panel_default{list-style: none;margin:0px 6px;padding:0px;width:366px;height:160px;}
+.comentFace_Box ul.commentFace_panel_default li{float:left;margin:0px;padding:0px;}
+.comentFace_Box ul.commentFace_panel_default li img{border:1px solid #FFFFFF;margin:0px;padding:0px;width:24px;height:24px;}
+.comentFace_Box ul.commentFace_panel_default li a:hover img{border:1px solid #3399FF;}
+
+.comentFace_page{padding:0px;text-align: center;border-top: 1px solid #D7D7D7;}
+.comentFace_page span{margin-left:5px;margin-right:5px;float: none;padding:0px;}

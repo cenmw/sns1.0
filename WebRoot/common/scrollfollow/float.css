@@ -1,0 +1,48 @@
+.msgborad{
+text-align:center;
+}
+
+.msgborad ul li{float:left; display:inline; line-height:25px; }
+.msgborad ul li.l{width:70px; text-align:right;}
+.msgborad ul li.r{width:230px; text-align:left;}
+.msgborad ul li.r0{width:230px; text-align:center;}
+
+
+add-collect-to{
+	overflow:hidden;	
+}
+.add-collect-to .title{
+	background-color:#29567D;
+	width:27px;
+	color:#FFF;font-size:14px;font-weight:bold;text-align:center;
+	padding-top:20px;padding-bottom: 20px;
+	cursor:pointer;
+	float:right;
+}
+.add-collect-to .title{
+	float:right;
+}
+.btn_lists{
+	border:1px solid #29567D; 
+	width:116px;
+	height:100%;
+}
+.float-box-content{
+	border:2px solid #A0AFC3;
+	background-color:#ECF4FC;
+	float:right;
+}
+
+.add-collect-to .float-box-content{width:300px;}
+
+
+.clearfix:after{
+content:"."; display:block; height:0; clear:both;
+visibility:hidden;
+}
+*html .clearfix{
+ height:1%;
+}
+*+html .clearfix{
+ height:1%;
+}

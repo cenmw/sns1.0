@@ -1,0 +1,12 @@
+.publish_tt {
+    border: 1px solid #CCCCCC;
+    cursor: text;
+    font-size: 14px;
+    height: 100px;
+    line-height: 24px;
+    overflow: auto;
+    padding: 1px 6px 1px 8px;
+    text-align: left;
+    width: 600px;
+    word-wrap: break-word;
+}

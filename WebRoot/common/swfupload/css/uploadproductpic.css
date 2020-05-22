@@ -1,0 +1,20 @@
+#fsUploadProgress{
+ clear:left;
+}
+#fsUploadProgress{
+	width:300px;
+	border: 1px solid #FFAA24;
+	background-color:#DDECF9;
+	padding-left:19px;
+}
+.progressContainer{
+	background-color:#8DD241;
+	width:283px;
+	height:5px;
+	margin-bottom:8px;
+	}
+.progressBarInProgress{
+	background-color:#FF0000;
+	width:0px;
+	height:5px;
+}

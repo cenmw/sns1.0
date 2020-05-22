@@ -1,0 +1,40 @@
+/* body */
+body{margin:0px; padding:0px; text-align:center; font-size:12px; font:"ËÎÌו",Arial, Helvetica, sans-serif; background:url(../images/bg.jpg) repeat-x; color:#333333; line-height:30px;}
+div,ul,li,img,form,input,p,span{margin:0px; padding:0px;}
+ul,li{list-style:none;}
+img{border:none;}
+a{font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none;}
+a:visited{font-size:14px;}
+a:link{font-size:14px; }
+a:hover{font-size:14px; text-decoration:underline;}
+.clear{clear:both; height:0px; overflow:hidden; display:block;}
+
+/* main */
+#main{width:1000px; margin:0px auto;}
+.content{width:1000px; float:left;}
+
+
+/* con_01 */
+.con_01{background:url(../images/bg_01.jpg) no-repeat; height:50px;}
+.con_02{background:url(../images/bg_02.jpg) no-repeat; height:50px;}
+.con_03{background:url(../images/bg_03.jpg) no-repeat; height:50px;}
+.con_04{background:url(../images/bg_04.jpg) no-repeat; height:50px;}
+.con_05{background:url(../images/bg_05.jpg) no-repeat; height:75px;}
+.con_06{background:url(../images/bg_06.jpg) no-repeat; height:180px;}
+.con_06 .text{margin-left:550px; float:left; display:inline; font-size:14px; width:450px; margin-top:15px;}
+.con_06 .text ul{float:left;}
+.con_06 .text ul li{float:left; height:30px; margin-top:5px;}
+.con_06 .text ul li.left{text-align:right; width:80px;}
+.con_06 .text ul li.right{text-align:left; width:370px;}
+.con_06 .text ul li.left0{text-align:right; width:80px; height:33px;}
+.con_06 .text ul li.right0{text-align:center; width:370px; height:33px;}
+.con_06 .text ul li.right0 p{margin-left:60px; float:left; display:inline;}
+.con_06 .text ul li.right img{ vertical-align:middle; margin-top:-3px; *margin-top:-7px; margin-left:3px;}
+.button{ background:url(../images/button.jpg) no-repeat; width:70px; height:33px; border:none; line-height:33px; margin-top:10px; cursor:pointer;}
+.yonghu{width:200px; height:20px;}
+.yzm{width:80px; height:20px;}
+.con_07{background:url(../images/bg_07.jpg) no-repeat; height:75px;}
+.con_08{background:url(../images/bg_08.jpg) no-repeat; height:95px;}
+
+
+

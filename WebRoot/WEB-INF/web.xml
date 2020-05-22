@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- 开启监听 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 用来阻止内存泄漏 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<!-- 系统监听 -->
+	<listener>
+		<listener-class>net.sf.ehcache.constructs.web.ShutdownListener</listener-class>
+	</listener>
+
+	<!-- 配置ssh2的监听器 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/applicationContext.xml;/WEB-INF/classes/*/*Action.xml;/WEB-INF/classes/*/*Dao.xml;/WEB-INF/classes/*/*Service.xml</param-value>
+	</context-param>
+	<!-- <servlet> <servlet-name>freemarker</servlet-name> <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class> 
+		<init-param> <param-name>TemplatePath</param-name> <param-value>/WEB-INF/templates/</param-value> 
+		</init-param> <init-param> <param-name>template_update_delay</param-name> 
+		<param-value>10</param-value> </init-param> <init-param> <param-name>ContentType</param-name> 
+		<param-value>text/html/</param-value> </init-param> <init-param> <param-name>default_encoding</param-name> 
+		<param-value>UTF-8</param-value> </init-param> <init-param> <param-name>number-format</param-name> 
+		<param-value>0.##</param-value> </init-param> <load-on-startup>1</load-on-startup> 
+		</servlet> <servlet-mapping> <servlet-name>freemarker</servlet-name> <url-pattern>*.ftl</url-pattern> 
+		</servlet-mapping> -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name><!-- 为true的话。不 管请求中是什么 格式都会转成UTF-8 -->
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<!-- 判断管理员是否登陆 -->
+	<filter>
+		<filter-name>CheckLoginFilter</filter-name>
+		<filter-class>com.cenmw.filter.CheckLoginFilter</filter-class>
+		<init-param>
+			<param-name>redirectURL</param-name>
+			<param-value>/admin/index.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>sessionKey</param-name>
+			<param-value>adminInfo</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CheckLoginFilter</filter-name>
+		<url-pattern>/manager/*</url-pattern>
+	</filter-mapping>
+	<!-- 验证超级管理员 -->
+	<filter>
+		<filter-name>CheckSysFilter</filter-name>
+		<filter-class>com.cenmw.filter.CheckSysFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CheckSysFilter</filter-name>
+		<url-pattern>/manager/sys/*</url-pattern>
+	</filter-mapping>
+	<!-- 验证会员登录 包括消费者和商户 -->
+	<filter>
+		<filter-name>MemberLoginFileter</filter-name>
+		<filter-class>com.cenmw.filter.MemberLoginFileter</filter-class>
+		<init-param>
+			<param-name>redirectURL</param-name>
+			<param-value>/c_login.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>sessionKey</param-name>
+			<param-value>memberInfo</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>MemberLoginFileter</filter-name>
+		<url-pattern>/membercenter/*</url-pattern>
+	</filter-mapping>
+	<!-- 在设置 URL Rewrite -->
+	<!-- UrlRewriteFilter filter -->
+	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+		<init-param>
+			<param-name>logLevel</param-name>
+			<param-value>WARN</param-value>
+		</init-param>
+	</filter>
+	<!-- Struts2 filter -->
+	<filter>
+		<filter-name>struts-cleanup</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+	</filter>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts-cleanup</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<!-- <error-page> <error-code>404</error-code> <location>/sjz/404.html</location> 
+		</error-page> <error-page> <error-code>500</error-code> <location>/sjz/500.html</location> 
+		</error-page> -->
+
+	<!-- 处理jsp include 乱码问题 -->
+	<jsp-config>
+		<jsp-property-group>
+			<description>html encoding example</description>
+			<display-name>JSPConfiguration</display-name>
+			<url-pattern>*.html</url-pattern>
+			<el-ignored>true</el-ignored>
+			<page-encoding>UTF-8</page-encoding>
+			<scripting-invalid>false</scripting-invalid>
+			<include-prelude></include-prelude>
+			<include-coda></include-coda>
+		</jsp-property-group>
+	</jsp-config>
+
+	<mime-mapping>
+		<extension>ico</extension>
+		<mime-type>image/x-icon</mime-type>
+	</mime-mapping>
+	<welcome-file-list>
+		<welcome-file>index.shtml</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
+

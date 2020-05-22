@@ -1,0 +1,199 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0px; padding:0px; background:#fff; font-size:12px; font-family:宋体,Arial, Helvetica, sans-serif; text-align:left; color:#333;}
+div,ul,li,dl,dt,dd,img,h1,h2,h3,span,form,input,label,fieldset,textarea,blockquote{margin:0px; padding:0px;}
+img{border:none;}
+
+ul li{list-style:none;}
+
+
+a{fon-size:14px; text-decoration:none; color:#333;}
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:underline; color:#ff6600;}
+a:active{text-decoration:none;}
+
+
+.clear{clear:both; height:0px; font-size:0px; overflow:hidden;}
+
+
+
+/* zhuce_logo */
+#zhuce_logo{width:983px; margin:10px auto 0px; overflow:hidden;}
+#zhuce_logo h1{width:260px; height:60px; float:left;}
+#zhuce_logo h2{padding:20px 0px 0px 20px; float:left;}
+
+
+/* zhuce */
+#zhuce{width:983px; margin:10px auto 0px; overflow:hidden;}
+
+
+/* zhuce_title */
+.zhuce_title{width:983px; height:31px; overflow:hidden; background:url(/member/images/bg.png) no-repeat 0px 0px;}
+.zhuce_title h2{width:300px; padding-left:10px; line-height:31px; float:left; font-size:14px; font-weight:bold; text-align:left;}
+
+
+/* zhuce_title_wel */
+.zhuce_title_wel{width:563px; padding-right:10px; text-align:right; float:right; line-height:31px; color:#666;}
+
+
+/* zhuce_con */
+#zhuce_con{width:941px; overflow:hidden; padding:20px 20px 30px; border-left:#ccc 1px solid; border-right:#ccc 1px solid; border-bottom:#ccc 1px solid;}
+
+
+/* zhuce_left */
+#zhuce_left{width:200px; float:left; overflow:hidden;}
+#zhuce_left h2{width:200px; line-height:25px; text-align:left; overflow:hidden; font-size:14px; font-weight:bold; color:#a40000;}
+
+
+/* zhuce_item */
+.zhuce_item{width:595px; overflow:hidden; text-align:left;}
+.zhuce_tt{width:150px; float:left; text-align:right; font-size:14px; font-weight:bold; line-height:24px;}
+.zhuce_cc{width:445px; float:left; line-height:24px; position:relative;}
+
+.succeed{width:12px; height:10px; background:url(/member/images/bg.png) no-repeat -540px -50px; overflow:hidden; position:absolute; top:8px; right:125px; }
+.failure{width:10px; height:10px; background:url(/member/images/bg.png) no-repeat -568px -50px; overflow:hidden; position:absolute; top:8px; right:125px; }
+.mar_top{margin-top:20px;}
+
+.ash{color:#666; line-height:24px; height:24px; padding:3px 0px 6px; overflow:hidden; float:left;width: 285px;}
+.ash_red{color:red; line-height:24px; height:24px; padding:3px 0px 6px; overflow:hidden; float:left;width: 285px;}
+.username{border:#cb9b7c 1px solid; height:24px; padding-left:5px; line-height:24px; width:285px;}
+
+.email{border-left:#ccc 1px solid; border-right:#ccc 1px solid; border-bottom:#ccc 1px solid; border-top:#999 1px solid; height:24px; padding-left:5px; line-height:24px; width:285px;}
+
+
+.authcode{border:#cb9b7c 1px solid; height:24px; padding-left:5px; line-height:24px; width:95px; float:left;}
+.authcode0{border-left:#ccc 1px solid; border-right:#ccc 1px solid; border-bottom:#ccc 1px solid; border-top:#999 1px solid; height:24px; padding-left:5px; line-height:24px; width:95px; float:left;}
+
+.authcode_img{width:85px; heigth:25px; margin-left:10px; float:left; display:inline;}
+.authcode_img img{vertical-align:-7px; *vertical-align:-2px;}
+
+.see{margin-left:10px; float:left; display:inline;}
+.see a{color:#eb6100;}
+
+.checkbox{width:13px; height:13px; margin:0px 10px 0px 0px; vertical-align:-2px; *vertical-align:0px;}
+
+.agree{padding-left:150px; width:445px; line-height:25px; margin:20px 0px; text-align:left; }
+
+.orange{color:#eb6100;}
+
+
+.submit{width:119px; height:30px; background:url(/member/images/bg.png) no-repeat -300px -50px; cursor:pointer; border:none; margin-left:150px;}
+
+
+/* zhuce_right */
+#zhuce_right{width:725px; float:right; overflow:hidden; padding-left:20px;}
+#zhuce_right h2{width:725px; text-align:left; overflow:hidden; font-size:14px; font-weight:bold; color:#a40000;}
+
+/* zhuce_line */
+#zhuce_line{width:1px; margin:20px 0px; float:left; overflow:hidden; background:#ccc; font-size:0px; height:380px;}
+
+
+/* zhuce_land */
+
+.zhuce_land{width:325px; overflow:hidden;}
+.land_left{width:110px; float:left; text-align:right; line-height:24px;  overflow:hidden; font-size:14px; font-weight:bold;}
+.land_right{width:215px; float:left; text-align:left; line-height:24px; overflow:hidden;}
+
+
+
+.land_user{border-left:#ccc 1px solid; border-right:#ccc 1px solid; border-bottom:#ccc 1px solid; border-top:#999 1px solid; height:24px; padding-left:5px; line-height:24px; width:175px;}
+.land_user0{border:#cb9b7c 1px solid; height:24px; padding-left:5px; line-height:24px; width:175px;}
+
+.mar_top0{margin-top:15px;}
+
+.land_sel{padding-left:110px; width:215px; text-align:left; line-height:24px; margin-top:8px;}
+
+.land_con{padding-left:110px; width:215px; text-align:left; margin-top:20px;}
+.land_btn{width:76px; height:30px; border:none; cursor:pointer; background:url(/member/images/bg.png) no-repeat -440px -50px; vertical-align:-3px; vertical-align:-11px\9; *vertical-align:-8px;}
+
+.land_forget{margin-left:15px; line-height:20px;}
+.land_forget a{color:#eb6100;}
+
+/* coop */
+.coop{width:270px; padding:20px 0px 0px 55px; overflow:hidden; text-align:left;}
+.coop h3{width:270px; line-height:25px; font-size:12px; font-weight:bold; margin-bottom:5px;}
+.coop_btn{width:210px; padding-left:60px; padding-top:10px; overflow:hidden;}
+
+
+/* zhuce_success */
+.zhuce_success{width:941px; overflow:hidden; padding-bottom:100px;}
+
+.zhuce_success h2{width:930px; padding-left:11px; text-align:left; line-height:30px; height:30px; font-size:14px; font-weight:bold; color:#a40000;}
+
+/* success_con */
+.success_con{width:600px; margin:130px auto; position:relative;}
+.success_con .bg{width:90px; height:70px; background:url(/member/images/bg.png) no-repeat 0px -50px; overflow:hidden; top:0px; left:0px; position:absolute;}
+.success_con h3{padding-left:100px; width:500px; line-height:30px; height:30px; text-align:left; overflow:hidden;  font-size:16px; font-weight:bold; color:#097c25;}
+.success_con p{width:500px; line-height:30px; height:30px; text-align:left; overflow:hidden; font-size:14px; margin:0px; padding:0px 0px 0px 100px;}
+.success_con .bth{height:32px; margin-top:5px;}
+.success_btn{width:149px; height:32px; background:url(/member/images/bg.png) no-repeat -120px -50px; line-height:32px; display:inline; float:left; text-align:center;}
+.success_btn a{font-size:14px; font-weight:bold;}
+.mar_right{margin-right:10px;}
+
+/* zhuce__infm */
+.zhuce_infm{width:930px; overflow:hidden; font-size:14px; padding-left:11px; text-align:left; line-height:30px;}
+.zhuce_infm span{color:#a40000; font-weight:bold;}
+
+/* basic_infm */
+.basic_infm{width:541px; float:left; overflow:hidden;}
+.basic_infm h2{width:521px; text-align:left; line-height:30px; font-size:12px; font-weight:bold; color:#eb6100; padding-left:20px; margin:10px 0px;}
+
+
+
+.basic_infm_con{width:541px; padding-top:10px;}
+.basic_infm_left{width:120px; float:left; text-align:right; line-height:24px; font-weight:bold;}
+.basic_infm_right{width:415px; float:right; text-align:left; padding-left:6px; line-height:24px; position:relative;}
+
+
+.basic_infm_pic{width:120px; height:120px; float:left; background:url(/member/images/bg.png) no-repeat -500px -160px; padding:7px 9px 9px 7px;}
+
+.upload_pic{margin-left:20px; float:left; display:inline; width:92px; height:24px; background:url(/member/images/bg.png) no-repeat -120px -160px; line-height:24px; margin-top:110px; text-align:center;}
+.upload_pic a{font-weight:bold; color:#eb6100;}
+
+
+/* contact_infm */
+.contact_infm{width:400px; float:right; overflow:hidden;}
+.contact_infm h2{width:400px; text-align:left; line-height:30px; font-size:12px; font-weight:bold; color:#eb6100; margin-top:10px;}
+.contact_infm_text{line-height:30px; height:30px; overflow:hidden; width:400px; text-align:left; margin-bottom:10px;}
+
+
+
+/* contact_infm_con */
+.contact_infm_con{width:400px; margin-top:10px; overflow:hidden;}
+.contact_infm_left{width:110px; float:left; text-align:right; line-height:26px; font-weight:bold;}
+.contact_infm_right{padding-left:5px; width:285px; float:left; text-align:left;}
+
+.infm_name{width:130px; border-left:#999 1px solid; border-right:#ccc 1px solid; border-bottom:#ccc 1px solid; border-top:#999 1px solid; height:24px; padding-left:5px; line-height:24px;}
+
+
+/* submit_infm */
+.submit_infm{width:285px; padding:20px 0px 0px 115px; text-align:left; overflow:hidden;}
+.submit_infm_btn{width:90px; height:29px; background:url(/member/images/bg.png) no-repeat 0px -160px; border:none; cursor:pointer; vertical-align:-3px; vertical-align:-10px\9; *vertical-align:-8px;}
+.submit_infm span{margin-left:20px;}
+
+
+.skip{width:280px; padding:80px 0px 0px 120px; text-align:left; overflow:hidden; color:#a40000; line-height:30px;}
+.skip a{font-weight:bold; color:#a40000; font-size:16px; margin-right:5px;}
+
+.radio{margin:0px 3px 0px 0px; *margin:0px; vertical-align:-2px; *vertical-align:0px;}
+
+.myself{width:330px; padding:5px; height:140px; text-align:left; border-left:#999 1px solid; border-right:#ccc 1px solid; border-bottom:#ccc 1px solid; border-top:#999 1px solid;}
+
+.myself_pic{width:68px; height:85px; position:absolute; background:url(/member/images/bg.png) no-repeat -300px -160px; right:0px; top:-10px;}
+
+
+.adress{width:107px; border-left:#999 1px solid; border-right:#ccc 1px solid; border-bottom:#ccc 1px solid; border-top:#999 1px solid; float:left; margin-right:7px; display:inline; position:relative;}
+.adress_text{padding-left:5px; font-size:12px; color:#666; width:102px; }
+.adress_text a,.inp_sel_text a:hover{font-size:12px; color:#666; text-decoration:none;}
+.adress_btn{width:7px; height:4px; position:absolute; top:10px; left:95px; background:url(/member/images/bg.png) no-repeat -440px -160px; cursor:pointer; overflow:hidden;}
+
+.adress ul{border:#ddd 1px solid; width:107px; position:absolute; left:-1px; top:24px; z-index:999; background:#fff; display:block;}
+.adress ul li{line-height:20px; height:20px; text-align:left; padding-left:5px; width:102px;}
+.adress ul li a{font-size:14px; color:#666;}
+
+.box{z-index:1;}
+.box0{z-index:100;}
+.box01{z-index:2;}
+
+

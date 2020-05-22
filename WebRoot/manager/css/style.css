@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{margin:0px;padding:0px;font-size:12px;}
+img{border:none;}
+
+/*字体*/
+.f12_grey{font-size:12px;color:#7d7d7d;font-weight:normal;}
+.f12_blue{font-size:12px;color:#0e4e82;font-weight:normal;}
+.fb14_blue{font-size:14px;color:#096abb;font-weight:bold;}
+
+/*链接*/
+.link_btn01 a{width:134px;height:24px;display:block;line-height:24px;text-decoration:none;text-align:center;}
+.link_btn01 a:link{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) bottom left no-repeat;}
+.link_btn01 a:visited{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) bottom left no-repeat;}
+.link_btn01 a:hover{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) top left no-repeat;}
+.link_btn01 a:active{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) bottom left no-repeat;}
+
+.link_btn01_current a{width:134px;height:24px;display:block;line-height:24px;text-decoration:none;text-align:center;}
+.link_btn01_current a:link{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) top left no-repeat;}
+.link_btn01_current a:visited{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) top left no-repeat;}
+.link_btn01_current a:hover{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) top left no-repeat;}
+.link_btn01_current a:active{font-size:12px;color:#004779;background:url(/manager/system/templates/images/btn_01.gif) top left no-repeat;}
+
+
+.link12_white a:link{font-size:12px;color:#fff;text-decoration:none;}
+.link12_white a:visited{font-size:12px;color:#fff;text-decoration:none;}
+.link12_white a:hover{font-size:12px;color:#fff;text-decoration:none;}
+.link12_white a:active{font-size:12px;color:#fff;text-decoration:none;}
+
+.link12_blue a:link{font-size:12px;color:#0e4e82;text-decoration:none;}
+.link12_blue a:visited{font-size:12px;color:#0e4e82;text-decoration:none;}
+.link12_blue a:hover{font-size:12px;color:#0e4e82;text-decoration:none;}
+.link12_blue a:active{font-size:12px;color:#0e4e82;text-decoration:none;}
+
+/*文本框*/
+.text01{width:150px;height:22px;border:1px solid #cdcdcc;line-height:22px;}
+.text02{width:37px;}
+.text03{width:45px;}
+
+/*边框*/
+.border01{border-right:1px solid #6894c1;}
